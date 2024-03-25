@@ -5,6 +5,9 @@ logs
 # Dependency directories
 node_modules/
 
+# mongo data
+mongo-data/
+
 # Build output
 dist/
 build/
