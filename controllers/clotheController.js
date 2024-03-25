@@ -10,10 +10,10 @@ const getAllClothes = asyncHandler(async (req, res) => {
     res.status(500);
     throw new Error("Internal Server Error");
   }
-  const page = parseInt(req.query.page) || 0;
-  const perPage = parseInt(req.query.limit) || 10;
+  const page = parseInt(req.query.page) || 1;
+  const perPage = parseInt(req.query.perPage) || 10;
 
-  const start = page * perPage;
+  const start = (page - 1) * perPage;
   const end = start + perPage;
 
   const paginatedClothes = clothes.slice(start, end);
@@ -23,7 +23,7 @@ const getAllClothes = asyncHandler(async (req, res) => {
     total: clothes.length,
     page,
     perPage,
-    toalPages: Math.ceil(clothes.length / perPage),
+    totalPages: Math.ceil(clothes.length / perPage),
   });
 });
 

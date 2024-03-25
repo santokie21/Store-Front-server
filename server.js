@@ -7,7 +7,7 @@ const errorHandler = require("./middleware/errorHandler");
 
 const corsOptions = {
   origin: "http://localhost:4200",
-  optionsSuccessStatus: 204,
+  optionsSuccessStatus: 200,
   methods: "GET, POST, PUT, DELETE",
 };
 
@@ -24,5 +24,5 @@ app.use(errorHandler);
 app.use(BASE_URL, clotheRouter);
 
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
