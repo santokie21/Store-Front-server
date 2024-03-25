@@ -11,7 +11,7 @@ const clotheSchema = new mongoose.Schema(
       required: [true, "Image is required"],
     },
     price: {
-      type: Number,
+      type: String,
       required: [true, "Price is required"],
     },
     rating: {
